@@ -1,19 +1,17 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sibetorsh/controllers/auth_controller.dart';
 import 'package:sibetorsh/utils/app_color.dart';
+import 'package:sibetorsh/view/user_list_page.dart';
 import '../widgets/button_normal.dart';
 import '../widgets/page_base.dart';
 import '../widgets/text_input.dart';
-import 'main_page.dart';
 
 class AddUserPage extends StatelessWidget {
   AuthController authController = Get.find();
   final _formKey = GlobalKey<FormState>();
 
-  AddUserPage({super.key}) {}
-  late int id;
+  AddUserPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,16 +70,18 @@ class AddUserPage extends StatelessWidget {
                         child: Row(children: [
                           Expanded(
                               child: ButtonNormal(
-                                  backgroundColor: AppColor.gray,
-                                  textColor: AppColor.text,
+                                  backgroundColor: AppColor.copyButton,
+                                  textColor: AppColor.colorPrimary,
                                   text: "لیست کاربران",
                                   onPressed: () {
-                                  //  Get.back();
-                                    Get.to(() => MainPage());
+                                    authController.userSibeTorsh();
+                                    Get.to(() => UserListPage());
                                   })),
                           const SizedBox(width: 16),
                           Expanded(
                               child: ButtonNormal(
+                                  backgroundColor: AppColor.copyButton,
+                                  textColor: AppColor.colorPrimary,
                                   text: "افزودن کاربر",
                                   onPressed: () {
                                     if (_formKey.currentState!.validate()) {
@@ -98,6 +98,5 @@ class AddUserPage extends StatelessWidget {
           );
     });
   }
-
 
 }

@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sibetorsh/controllers/auth_controller.dart';
 import 'package:sibetorsh/requests/dio_helper.dart';
 import 'package:sibetorsh/view/add_user_page.dart';
-import 'package:sibetorsh/view/main_page.dart';
+import 'package:sibetorsh/view/user_list_page.dart';
 
 void main() async {
 
@@ -24,14 +24,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'sibetorsh',
       theme: ThemeData(
         fontFamily: 'vazirmatn',
         primaryColor: const Color(0x00ffffff),
       ),
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: AddUserPage(),
     );
   }
 
