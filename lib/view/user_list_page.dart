@@ -10,7 +10,7 @@ class UserListPage extends StatelessWidget {
   AuthController authController = Get.find();
 
   UserListPage({super.key}) {
-    authController.userSibeTorsh();
+   // authController.userSibeTorsh();
   }
 
   @override
